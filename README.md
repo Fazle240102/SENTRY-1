@@ -190,7 +190,17 @@ The system is designed to validate:
 
 Completed academic prototype demonstrating low-cost ultrasonic sensing with real-time web-based visualization.
 
-## 👥 Project Team
+## 👥 Team
 
-Developed collaboratively as a team project for the **Computer Science & Engineering** program at **Daffodil International University**.
+Developed collaboratively by **Team Adrenaline** at **Daffodil International University**.
+
+## 🎓 Academic Context
+
+- **Institution:** Daffodil International University
+- **Project Type:** Academic Embedded Systems / IoT / Robotics Project
+- **Team:** Team Adrenaline
+
+## 📌 Project Status
+
+Completed academic prototype demonstrating low-cost ultrasonic sensing with real-time web-based visualization.
 
