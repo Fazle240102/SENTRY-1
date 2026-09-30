@@ -190,10 +190,7 @@ The system is designed to validate:
 
 Completed academic prototype demonstrating low-cost ultrasonic sensing with real-time web-based visualization.
 
-## 👤 Author
+## 👥 Project Team
 
-**Md. Fazle Rabbi**
-
-Computer Science & Engineering  
-Daffodil International University
+Developed collaboratively as a team project for the **Computer Science & Engineering** program at **Daffodil International University**.
 
