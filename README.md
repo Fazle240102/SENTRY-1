@@ -79,6 +79,10 @@ Readings outside the valid measurement range are discarded before being used for
 
 ## 🌐 Real-Time Dashboard
 
+![SENTRY-1 Dashboard](assets/dashboard.png)
+
+
+
 The browser dashboard renders incoming measurements as a radar-style visualization using HTML5 Canvas.
 
 The Node.js backend receives ESP32 serial data and broadcasts radar measurements to connected clients through Socket.IO.
@@ -87,20 +91,21 @@ The Node.js backend receives ESP32 serial data and broadcasts radar measurements
 
 ```text
 SENTRY-1/
-├── ESP32/
-│   └── Radar.ino
-├── server/
+├── assets/
+│   └── dashboard.png
+├── backend/
 │   ├── server.js
 │   ├── package.json
 │   └── package-lock.json
-├── public/
+├── frontend/
 │   ├── index.html
-│   ├── style.css
-│   └── script.js
+│   └── radar.js
+├── Rader.ino
+├── .gitignore
 └── README.md
 ```
 
-> The exact folder/file names may vary slightly depending on the uploaded project version.
+> The firmware file is currently named `Rader.ino` in the project source.
 
 ## 🚀 Getting Started
 
@@ -113,9 +118,14 @@ cd SENTRY-1
 
 ### 2. Install backend dependencies
 
+From the project root:
+
 ```bash
+cd backend
 npm install
 ```
+
+The backend uses **Express**, **Socket.IO**, **SerialPort**, and **@serialport/parser-readline**.
 
 ### 3. Upload the ESP32 firmware
 
@@ -127,11 +137,19 @@ Connect the ESP32 to the computer using USB and identify its serial port.
 
 ### 5. Start the server
 
+From the `backend` directory:
+
 ```bash
-node server.js
+npm start
 ```
 
-Then open the local dashboard in a browser.
+The dashboard is served from the `frontend` directory at:
+
+```text
+http://localhost:3000
+```
+
+> By default, the backend expects the ESP32 on `COM10`. Set the `SERIAL_PORT` environment variable when your device uses a different port.
 
 ## 🔌 Serial & Communication Flow
 
