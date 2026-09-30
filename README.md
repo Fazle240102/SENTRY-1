@@ -81,8 +81,6 @@ Readings outside the valid measurement range are discarded before being used for
 
 ![SENTRY-1 Dashboard](assets/dashboard.png)
 
-
-
 The browser dashboard renders incoming measurements as a radar-style visualization using HTML5 Canvas.
 
 The Node.js backend receives ESP32 serial data and broadcasts radar measurements to connected clients through Socket.IO.
@@ -100,12 +98,10 @@ SENTRY-1/
 ├── frontend/
 │   ├── index.html
 │   └── radar.js
-├── Rader.ino
+├── Radar.ino
 ├── .gitignore
 └── README.md
 ```
-
-> The firmware file is currently named `Rader.ino` in the project source.
 
 ## 🚀 Getting Started
 
@@ -185,22 +181,8 @@ The system is designed to validate:
 - **Project Type:** Embedded Systems / IoT / Robotics
 - **Core Platform:** ESP32
 - **Institution:** Daffodil International University
-
-## 📌 Project Status
-
-Completed academic prototype demonstrating low-cost ultrasonic sensing with real-time web-based visualization.
-
-## 👥 Team
-
-Developed collaboratively by **Team Adrenaline** at **Daffodil International University**.
-
-## 🎓 Academic Context
-
-- **Institution:** Daffodil International University
-- **Project Type:** Academic Embedded Systems / IoT / Robotics Project
 - **Team:** Team Adrenaline
 
 ## 📌 Project Status
 
 Completed academic prototype demonstrating low-cost ultrasonic sensing with real-time web-based visualization.
-
