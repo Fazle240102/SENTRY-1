@@ -1,0 +1,29 @@
+# Node.js dependencies (backend)
+node_modules/
+
+# npm/yarn logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables (if you ever add API keys, credentials, etc.)
+.env
+.env.local
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE folders
+.vscode/
+.idea/
+*.swp
+
+# Arduino build artifacts (if compiled locally, these can get large)
+build/
+*.hex
+*.elf
+
+# Package lock (optional — see note below)
+# package-lock.json
