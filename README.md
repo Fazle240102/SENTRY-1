@@ -1,0 +1,181 @@
+# SENTRY-1
+
+**A Low-Cost ESP32-Based Ultrasonic Radar System with Real-Time Web-Based Visualization**
+
+SENTRY-1 is a low-cost embedded radar prototype that combines an **ESP32**, **HC-SR04 ultrasonic sensor**, and **SG90 servo motor** with a browser-based real-time visualization dashboard.
+
+The system performs a controlled angular sweep, measures distance, filters noisy readings, and streams radar data to a web interface through a Node.js backend and Socket.IO.
+
+## ✨ Key Features
+
+- 📡 Ultrasonic distance sensing with HC-SR04
+- 🔄 Automated 15°–165° sector sweep
+- 🎯 1° angular resolution
+- 🧹 5-sample median filtering for stable measurements
+- 📏 Configurable working range of approximately 2–40 cm
+- 🚨 Proximity alert with active buzzer
+- ⚡ ESP32-based embedded control
+- 🌐 Real-time browser visualization
+- 🔌 Serial communication between ESP32 and server
+- 🔗 WebSocket-based streaming using Socket.IO
+- 📱 Responsive radar dashboard
+
+## 🏗️ System Architecture
+
+```text
+HC-SR04 + SG90 Servo
+        │
+        ▼
+      ESP32
+        │
+        │ USB Serial
+        ▼
+   Node.js Server
+        │
+        │ Socket.IO
+        ▼
+ Web Radar Dashboard
+```
+
+The ESP32 controls the servo sweep and ultrasonic measurements. Sensor readings are transmitted over USB serial to the Node.js server, which forwards the data to connected browsers using Socket.IO.
+
+## 🔧 Hardware
+
+| Component | Purpose |
+|---|---|
+| ESP32 Dev Board | Main microcontroller |
+| HC-SR04 | Ultrasonic distance measurement |
+| SG90 Servo | Sensor angle control |
+| Active Buzzer | Proximity alert |
+| Breadboard | Circuit prototyping |
+
+## 💻 Software Stack
+
+| Layer | Technology |
+|---|---|
+| Firmware | Arduino / ESP32 |
+| Backend | Node.js |
+| Web Server | Express |
+| Real-Time Communication | Socket.IO |
+| Serial Communication | SerialPort |
+| Frontend | HTML, CSS, JavaScript |
+| Visualization | HTML5 Canvas |
+
+## 📐 Measurement Methodology
+
+The radar performs a sector sweep from **15° to 165°** to avoid stressing the servo near its mechanical end stops.
+
+Key parameters include:
+
+- Sweep range: **15°–165°**
+- Step size: **1°**
+- Step delay: **25 ms**
+- Echo timeout: **6000 µs**
+- Filter: **Median of 5 samples**
+- Valid measurement range: **2–40 cm**
+- Proximity alert threshold: **20 cm**
+
+Readings outside the valid measurement range are discarded before being used for visualization.
+
+## 🌐 Real-Time Dashboard
+
+The browser dashboard renders incoming measurements as a radar-style visualization using HTML5 Canvas.
+
+The Node.js backend receives ESP32 serial data and broadcasts radar measurements to connected clients through Socket.IO.
+
+## 📁 Project Structure
+
+```text
+SENTRY-1/
+├── ESP32/
+│   └── Radar.ino
+├── server/
+│   ├── server.js
+│   ├── package.json
+│   └── package-lock.json
+├── public/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+└── README.md
+```
+
+> The exact folder/file names may vary slightly depending on the uploaded project version.
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Fazle240102/SENTRY-1.git
+cd SENTRY-1
+```
+
+### 2. Install backend dependencies
+
+```bash
+npm install
+```
+
+### 3. Upload the ESP32 firmware
+
+Open the Arduino firmware in Arduino IDE, select the appropriate ESP32 board and serial port, then upload the firmware.
+
+### 4. Connect the ESP32
+
+Connect the ESP32 to the computer using USB and identify its serial port.
+
+### 5. Start the server
+
+```bash
+node server.js
+```
+
+Then open the local dashboard in a browser.
+
+## 🔌 Serial & Communication Flow
+
+```text
+Ultrasonic Measurement
+        ↓
+ESP32 Firmware
+        ↓
+USB Serial
+        ↓
+Node.js + SerialPort
+        ↓
+Socket.IO
+        ↓
+Browser Dashboard
+```
+
+## 🧪 Validation
+
+The system is designed to validate:
+
+- Servo sweep and angular positioning
+- Ultrasonic distance measurement
+- Noise filtering
+- Proximity detection
+- Serial data transmission
+- Real-time WebSocket communication
+- Browser-side radar visualization
+
+## 🎓 Academic Context
+
+- **Project:** SENTRY-1
+- **Project Type:** Embedded Systems / IoT / Robotics
+- **Core Platform:** ESP32
+- **Institution:** Daffodil International University
+
+## 📌 Project Status
+
+Completed academic prototype demonstrating low-cost ultrasonic sensing with real-time web-based visualization.
+
+## 👤 Author
+
+**Md. Fazle Rabbi**
+
+Computer Science & Engineering  
+Daffodil International University
+
